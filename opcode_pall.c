@@ -5,17 +5,19 @@
  * @stack: double pointer to the head of the stack
  * @line_number: line number of the opcode being executed
  */
+
 void pall(stack_node_t **stack, unsigned int line_number)
 {
-    stack_node_t *current = *stack;
+		stack_node_t *current = *stack;
 
-    (void)line_number;
+		(void)line_number;
 
-    while (current)
-    {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
+	while (current)
+
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }
 
 /**
@@ -25,11 +27,12 @@ void pall(stack_node_t **stack, unsigned int line_number)
  */
 void pint(stack_node_t **stack, unsigned int line_number)
 {
-    if (!*stack)
-    {
-        fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+		if (!*stack)
 
-    printf("%d\n", (*stack)->n);
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+		printf("%d\n", (*stack)->n);
 }

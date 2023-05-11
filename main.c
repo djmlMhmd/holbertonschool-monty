@@ -32,6 +32,15 @@ int main(int argc, char **argv)
 
 		process_file(file, &stack);
 
+		while (stack)
+	{
+		stack_node_t *next = stack->next;
+
+		free(stack);
+
+		stack = next;
+	}
+
 		fclose(file);
 		return (EXIT_SUCCESS);
 }

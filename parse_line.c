@@ -18,7 +18,7 @@ void parse_line(char *line,
 {
 		char *opcode = strtok(line, " \n");
 
-		if (!opcode || opcode[0] == '#')
+		if (line == NULL || line[0] == '\0' || line[0] == '#')
 		return;
 
 		if (strcmp(opcode, "push") == 0)
