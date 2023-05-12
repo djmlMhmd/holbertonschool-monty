@@ -34,7 +34,7 @@ void parse_line(char *line,
 		else if (strcmp(opcode, "swap") == 0)
 			swap(stack, line_number);
 		else if (strcmp(opcode, "add") == 0)
-			swap(stack, line_number);
+			add(stack, line_number);
 		else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
