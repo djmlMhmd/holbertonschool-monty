@@ -2,18 +2,20 @@
 #include <stdio.h>
 
 /**
- * pall - Prints all the values on the stack.
- * @stack: A pointer to the top of the stack.
- * @line_number: The line number of the pall opcode.
+ * pall - prints all the values on the stack
+ * @stack: pointer to the head of the stack
+ * @line_number: line number of the opcode being executed
  */
 
-void pall(stack_node_t **stack, unsigned int line_number __attribute__((unused)))
+void pall(stack_node_t **stack, unsigned int line_number)
 {
-		stack_node_t *node = *stack;
+	(void)line_number;
 
-		while (node != NULL)
+	stack_node_t *current = *stack;
+
+	while (current)
 	{
-		printf("%d\n", node->n);
-		node = node->next;
+	printf("%d\n", current->n);
+	current = current->next;
 	}
 }

@@ -11,6 +11,9 @@
  * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure
  */
 
+	int global_status = EXIT_SUCCESS;
+	char *args = NULL;
+
 int main(int argc, char **argv)
 {
 		if (argc != 2)
