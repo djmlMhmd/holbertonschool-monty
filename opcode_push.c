@@ -11,44 +11,36 @@
 
 void push(stack_node_t **stack, unsigned int line_number)
 {
-		int n;
-		char *arg;
+		char *value_str = strtok(NULL, " \n");
 
-		if (!stack)
+		if (value_str == NULL)
 	{
-		fprintf(stderr, "L%d: stack not found\n", line_number);
-		exit(EXIT_FAILURE);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
 	}
 
-		arg = strtok(NULL, " \n");
-		if (!arg || (!isdigit(*arg) && *arg != '-'))
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		int value = atoi(value_str);
 
-		n = atoi(arg);
-		if (!n)
+		if (value_str[0] == '\0' || (value == 0 && value_str[0] != '0'))
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
 	}
 
 		stack_node_t *new_node = malloc(sizeof(stack_node_t));
 
-		if (!new_node)
+		if (new_node == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		free(new_node);
-		exit(EXIT_FAILURE);
+			fprintf(stderr, "Error: malloc failed\n");
+			exit(EXIT_FAILURE);
 	}
 
-		new_node->n = n;
+		new_node->n = value;
 		new_node->prev = NULL;
 		new_node->next = *stack;
 
-		if (*stack)
-		(*stack)->prev = new_node;
+		if (*stack != NULL)
+			(*stack)->prev = new_node;
 
-		*stack = new_node;
+			*stack = new_node;
 }

@@ -1,38 +1,18 @@
 #include "monty.h"
 
 /**
- * pall - prints all the values on the stack
- * @stack: double pointer to the head of the stack
- * @line_number: line number of the opcode being executed
+ * pall - Prints all the values on the stack.
+ * @stack: A pointer to the top of the stack.
+ * @line_number: The line number of the pall opcode.
  */
 
 void pall(stack_node_t **stack, unsigned int line_number)
 {
-		stack_node_t *current = *stack;
+		stack_node_t *node = *stack;
 
-		(void)line_number;
-
-	while (current)
-
+		while (node != NULL)
 	{
-		printf("%d\n", current->n);
-		current = current->next;
+		printf("%d\n", node->n);
+		node = node->next;
 	}
-}
-
-/**
- * pint - prints the value at the top of the stack
- * @stack: double pointer to the head of the stack
- * @line_number: line number of the opcode being executed
- */
-void pint(stack_node_t **stack, unsigned int line_number)
-{
-		if (!*stack)
-
-	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-		printf("%d\n", (*stack)->n);
 }
