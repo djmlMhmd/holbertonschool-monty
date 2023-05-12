@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * pall - Prints all the values on the stack.
@@ -6,7 +7,7 @@
  * @line_number: The line number of the pall opcode.
  */
 
-void pall(stack_node_t **stack, unsigned int line_number)
+void pall(stack_node_t **stack, unsigned int line_number __attribute__((unused)))
 {
 		stack_node_t *node = *stack;
 
