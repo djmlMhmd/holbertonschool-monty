@@ -39,4 +39,5 @@ void pint(stack_node_t **stack, unsigned int line_number);
 void parse_line(char *line, size_t line_len __attribute__((unused)), unsigned int line_number, stack_node_t **stack);
 void process_file(FILE *file, stack_node_t **stack);
 void pop(stack_node_t **stack, unsigned int line_number);
+void swap(stack_node_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
