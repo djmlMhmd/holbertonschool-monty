@@ -33,7 +33,7 @@ typedef struct instruction_s
 
 /* function prototypes */
 
-void pall(stack_node_t **stack, unsigned int line_number);
+void pall(stack_node_t **stack, unsigned int line_number __attribute__((unused)));
 void push(stack_node_t **stack, unsigned int line_number);
 void pint(stack_node_t **stack, unsigned int line_number);
 void parse_line(char *line, size_t line_len __attribute__((unused)), unsigned int line_number, stack_node_t **stack);
@@ -41,5 +41,5 @@ void process_file(FILE *file, stack_node_t **stack);
 void pop(stack_node_t **stack, unsigned int line_number);
 void swap(stack_node_t **stack, unsigned int line_number);
 void add(stack_node_t **stack, unsigned int line_number);
-
+void nop(stack_node_t **stack, unsigned int line_number __attribute__((unused)));
 #endif /* MONTY_H */
