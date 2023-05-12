@@ -33,6 +33,8 @@ void parse_line(char *line,
 			pop(stack, line_number);
 		else if (strcmp(opcode, "swap") == 0)
 			swap(stack, line_number);
+		else if (strcmp(opcode, "add") == 0)
+			swap(stack, line_number);
 		else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
