@@ -14,7 +14,7 @@ void process_file(FILE *file, stack_node_t **stack)
 	size_t line_len = 0;
 	unsigned int line_number = 0;
 	ssize_t read;
-	unsigned int args_len = 0;
+
 
 		while ((read = getline(&line, &line_len, file)) != -1)
 	{
