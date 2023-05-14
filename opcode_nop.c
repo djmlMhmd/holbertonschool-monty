@@ -7,7 +7,7 @@
  * @line_number: The line number of the instruction.
  */
 void nop(
-	stack_node_t **stack, 
+	stack_node_t **stack,
 	unsigned int line_number __attribute__((unused)))
 {
 	(void)**stack;
